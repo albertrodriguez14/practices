@@ -18,3 +18,5 @@ Route::get('/', function () {
 
 
 Route::resource('/contacto', 'ContactController');
+
+route::get('/contacto/{id}/destroy','ContactController@destroy')->name('contacto.destroy');
