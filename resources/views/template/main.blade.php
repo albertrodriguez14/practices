@@ -193,18 +193,28 @@
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-address-book"></i>
                 <p>
-                  Contactos
+                  Inscripcion
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                 <a href="{{route("contacto.index")}}" class="nav-link">
-                    <i class="nav-icon fas fa-file-signature "></i>
-                    <p>Agregar</p>
+                    <i class="nav-icon fas fa-restroom "></i>
+                    <p>Contacto</p>
                   </a>
                 </li>
               </ul>
+               {{-- estudiante --}}
+               <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-child "></i>
+                    <p>Estudiante</p>
+                  </a>
+                </li>
+              </ul>
+
             </li>
             
                  {{-- menu table --}}

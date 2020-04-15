@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use  App\Models\Dni\Dni;
 use  App\Models\Contact\Contact;
-
+use App\Http\Requests\contacto\ContactStoreRequest;
 
 class ContactController extends Controller
 {
@@ -24,7 +24,7 @@ class ContactController extends Controller
         $dnis = Dni::get();
          // dd($dnis);
 
-        $contact = Contact::get();
+        $contact = Contact::paginate(5);
 
         //dd($contact);
 
@@ -47,13 +47,13 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactStoreRequest $request)
     {
         //realizamos la insercion de los datos con ORM 
              
        $result =  Contact::create($request->all());
          
-          return redirect()->route("contacto.index");
+          return redirect()->route("contacto.index")->with('success','Satisfactorio!');
 
     }
 
@@ -99,7 +99,7 @@ class ContactController extends Controller
             $solicitud->fill($request->all());
               $solicitud->save();
 
-            return redirect()->route("contacto.index");
+            return redirect()->route("contacto.index")->with('warning','Editado Satisfactorio');
     }
 
     /**
@@ -113,7 +113,7 @@ class ContactController extends Controller
         
            $delete = Contact::findOrFail($id);
             $delete->delete();
-            return redirect()->route("contacto.index");
+            return redirect()->route("contacto.index")->with('delete','Eliminado Satisfactorio');
 
 
     }

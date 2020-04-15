@@ -11,7 +11,7 @@ class Contact extends Model
 
     protected $primarykey = "id";
 
-    protected $fillable = ['Nombre_contacto','apellido_contacto','dni_id','cedula_contacto','telefono_contacto']; 
+    protected $fillable = ['nombre_contacto','apellido_contacto','dni_id','cedula_contacto','telefono_contacto']; 
      
 
      public function dni()
