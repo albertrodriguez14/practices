@@ -27,7 +27,8 @@ class ContactStoreRequest extends FormRequest
 
                 'nombre_contacto' =>  'required',
                'apellido_contacto' => 'required',
-                'cedula_contacto' => 'required | numeric',
+                'cedula_contacto' => 'required | numeric |unique:contacts,cedula_contacto',
+                'dni_id'=> 'required | integer | not_In:0',
                 'telefono_contacto'=> 'required | numeric '
 
             //

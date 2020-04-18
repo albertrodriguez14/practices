@@ -3,6 +3,7 @@
 namespace App\Http\Requests\contacto;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ContactUpdateRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class ContactUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,6 +25,13 @@ class ContactUpdateRequest extends FormRequest
     public function rules()
     {
         return [
+
+               'nombre_contacto' =>  'required',
+               'apellido_contacto' => 'required',
+                'cedula_contacto' => 'required | numeric ',Rule::unique('contacts')->ignore($this->contacto),
+                'dni_id'=> 'required | integer | not_In:0',
+                'telefono_contacto'=> 'required | numeric',
+                
             //
         ];
     }

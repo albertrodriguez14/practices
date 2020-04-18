@@ -18,7 +18,7 @@ class CreateContactsTable extends Migration
             $table->string('nombre_contacto');
             $table->string('apellido_contacto');
             $table->unsignedBigInteger('dni_id')->unsigned();
-            $table->string('cedula_contacto');
+            $table->string('cedula_contacto')->unique();
             $table->string('telefono_contacto');
          
             $table->foreign('dni_id')->references('id')->on('dnis')->onDelete('cascade');

@@ -27,6 +27,8 @@
         <option value="{{$item->id }} ">{{$item->dni}}</option>
         @endforeach 
         </select>
+        {!!$errors->first('dni_id','<small  class ="text-danger" > :message </small>') !!}
+
           </div>
 
     {{-- numero Identificacion --}}

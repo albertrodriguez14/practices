@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use  App\Models\Dni\Dni;
 use  App\Models\Contact\Contact;
 use App\Http\Requests\contacto\ContactStoreRequest;
+use App\Http\Requests\contacto\ContactUpdateRequest;
 
 class ContactController extends Controller
 {
@@ -91,7 +92,7 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ContactUpdateRequest $request, $id)
     {
 
         

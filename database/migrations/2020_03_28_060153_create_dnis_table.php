@@ -15,7 +15,7 @@ class CreateDnisTable extends Migration
     {
         Schema::create('dnis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('dni', 12);
+            $table->unique('dni', 12)->unique();
             $table->timestamps();
         });
     }
